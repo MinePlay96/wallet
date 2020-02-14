@@ -14,10 +14,14 @@ namespace wallet
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Currency doller = new Currency("dolar", 1.08);
+            Currency pfund = new Currency("Pfund", 0.83);
+            Money amountOne = new Money(doller, 10);
+            Money amountToo = new Money(pfund, 0);
+            Money schiebung = amountOne.substract(5);
+            amountToo.Add(schiebung);
+            
+            System.Diagnostics.Debug.WriteLine(amountToo.Amount);
         }
     }
 }
