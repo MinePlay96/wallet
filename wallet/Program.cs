@@ -14,14 +14,18 @@ namespace wallet
         [STAThread]
         static void Main()
         {
-            Currency doller = new Currency("dolar", 1.08);
-            Currency pfund = new Currency("Pfund", 0.83);
-            Money amountOne = new Money(doller, 10);
-            Money amountToo = new Money(pfund, 0);
-            Money schiebung = amountOne.substract(5);
-            amountToo.Add(schiebung);
+            Currency euro = new Currency("euro", 1);
+            Currency dollar = new Currency("dollar", 1.08);
+
+            CashWallet leons = new CashWallet(euro, 10.50);
+            CashWallet simon = new CashWallet(dollar, 0);
+
+            Money toTransfer = new Money(euro, 10);
+
+            leons.TransferTo(toTransfer, simon);
             
-            System.Diagnostics.Debug.WriteLine(amountToo.Amount);
+            System.Diagnostics.Debug.WriteLine(leons.Balance.Amount + leons.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine(simon.Balance.Amount + simon.Balance.Currency.Name);
         }
     }
 }

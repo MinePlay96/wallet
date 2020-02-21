@@ -6,8 +6,8 @@ namespace wallet
 {
     class Money
     {
-        public double Amount { get; set; }
-        protected Currency Currency { get; set; }
+        public double Amount { get; protected set; }
+        public Currency Currency { get; protected set; }
 
         public Money(Currency currency, double amount)
         {
@@ -27,10 +27,20 @@ namespace wallet
             this.Amount += Money.Convert(this.Currency, money.Currency, money.Amount);
         }
 
-        public Money substract (double amonut)
+        public Money Subtract (Money money)
         {
-            this.Amount -= amonut;
-            return new Money(this.Currency, amonut);
+            if (this.Currency == money.Currency)
+            {
+                // just add amount
+                this.Amount -= money.Amount;
+                return new Money(this.Currency, money.Amount);
+            } 
+            
+            // convert currency and add
+            double convertedAmount = Money.Convert(this.Currency, money.Currency, money.Amount);
+            this.Amount -= convertedAmount;
+            return new Money(this.Currency, convertedAmount);
+
         }
 
         public static double Convert(Currency from, Currency to, double toConvertAmount)

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace wallet
 {
-    class Class2
+    interface IDeposit
     {
+        public void Deposit(Money amount);
     }
 }

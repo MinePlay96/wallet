@@ -6,7 +6,8 @@ namespace wallet
 {
     class Currency
     {
-        protected string Name { get; set; }
+        public string Name { get; protected set; }
+        // x of this equils one euro
         protected double EuroConversionFactor { get; set; }
 
         public Currency(string name, double euroConversionFactor)
