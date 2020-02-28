@@ -67,7 +67,7 @@
     </ShowAsAssociation>
     <Lollipop Orientation="Left" Position="0.1" />
   </Class>
-  <Class Name="wallet.CashWallet">
+  <Class Name="wallet.CashWallet" Collapsed="true">
     <Position X="11.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>

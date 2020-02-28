@@ -17,6 +17,11 @@ namespace wallet
         {
         }
 
+        public void TransferTo(Money amount, IDeposit toWallet)
+        {
+            toWallet.Deposit(this.Withdraw(amount));
+        }
+
         public Money Withdraw(Money amount)
         {
             return this.Balance.Subtract(amount);
