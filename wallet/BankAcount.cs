@@ -6,6 +6,8 @@ namespace wallet
 {
     abstract class BankAcount : Wallet
     {
+        protected History History = new History();
+
         public BankAcount(Money balance) : base(balance)
         {
         }
@@ -14,6 +16,12 @@ namespace wallet
         {
         }
 
-        protected History History = new History();
+        public void TransferTo(Money amount, Wallet:IDeposit toWallet) : base (amount, toWallet)
+        {
+            if ()
+         
+            this.History.AddHistoryElement(amount, this, toWallet);
+            toWallet.Deposit(this.Withdraw(amount));
+        }
     }
 }
