@@ -16,11 +16,10 @@ namespace wallet
         {
         }
 
-        new public void TransferTo(Money amount, IDeposit toWallet) : base (amount, toWallet)
-        {         
-            base.
+        new public void TransferTo(Money amount, IDeposit toWallet)
+        {
+            base.TransferTo(amount, toWallet);
             this.History.AddHistoryElement(amount, this, toWallet);
-            toWallet.Deposit(this.Withdraw(amount));
         }
     }
 }
