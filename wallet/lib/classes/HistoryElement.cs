@@ -8,9 +8,9 @@ namespace wallet
     {
         public Money Amount { get; protected set; }
         public Wallet FromWallet { get; protected set; }
-        public Wallet ToWallet { get; protected set; }
+        public IDeposit ToWallet { get; protected set; }
 
-        public HistoryElement(Money amount, Wallet fromWallet, Wallet toWallet)
+        public HistoryElement(Money amount, Wallet fromWallet, IDeposit toWallet)
         {
             this.Amount = amount;
             this.FromWallet = fromWallet;

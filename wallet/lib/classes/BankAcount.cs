@@ -16,10 +16,9 @@ namespace wallet
         {
         }
 
-        public void TransferTo(Money amount, Wallet:IDeposit toWallet) : base (amount, toWallet)
-        {
-            if ()
-         
+        new public void TransferTo(Money amount, IDeposit toWallet) : base (amount, toWallet)
+        {         
+            base.
             this.History.AddHistoryElement(amount, this, toWallet);
             toWallet.Deposit(this.Withdraw(amount));
         }
