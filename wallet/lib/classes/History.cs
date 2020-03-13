@@ -8,7 +8,7 @@ namespace wallet
     {
         protected List<HistoryElement> HistoryElements = new List<HistoryElement>();
 
-        public void AddHistoryElement (Money amount, Wallet fromWallet, Wallet toWallet)
+        public void AddHistoryElement (Money amount, Wallet fromWallet, IDeposit toWallet)
         {
             HistoryElements.Add(new HistoryElement(amount, fromWallet, toWallet));
         }
