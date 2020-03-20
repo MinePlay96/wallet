@@ -4,7 +4,7 @@ using System.Text;
 
 namespace wallet
 {
-    class OnlineAcount: DepositableBankAcount
+    class OnlineAcount:BankAcount, IDeposit
     {
         public BankAcount SrcWallet { get; protected set; }
 
@@ -16,6 +16,12 @@ namespace wallet
         public OnlineAcount(Currency currency, double amount, BankAcount srcWallet) : base(currency, amount)
         {
             this.SrcWallet = srcWallet;
+        }
+
+        public void Deposit(Money amount, Wallet fromWallet)
+        {
+            this.History.AddHistoryElement(amount, fromWallet, this);
+            this.Balance.Add(amount);
         }
 
         // TODO: add TranferTo override (online can not be to cash)
