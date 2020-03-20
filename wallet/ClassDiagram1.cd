@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="wallet.Money">
-    <Position X="9" Y="0.5" Width="1.75" />
+    <Position X="1.75" Y="4.5" Width="1.75" />
+    <AssociationLine Name="Currency" Type="wallet.Currency" FixedToPoint="true">
+      <Path>
+        <Point X="2.688" Y="6.632" />
+        <Point X="2.688" Y="7.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAIACAACACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\Money.cs</FileName>
@@ -10,8 +16,107 @@
       <Property Name="Currency" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="wallet.DepositableBankAcount">
+    <Position X="7.5" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>lib\classes\DepositableBankAcount.cs</FileName>
+      <NewMemberFileName>lib\classes\BankAcount.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.733" />
+  </Class>
+  <Class Name="wallet.CreditAcount">
+    <Position X="4.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\CreditAcount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wallet.Currency">
+    <Position X="1" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\Currency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wallet.DebitAcount">
+    <Position X="4.75" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\DebitAcount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wallet.OnlineAcount">
+    <Position X="8.5" Y="11.25" Width="2.5" />
+    <InheritanceLine Type="wallet.DepositableBankAcount" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="10.425" />
+        <Point X="8.75" Y="10.875" />
+        <Point X="9.75" Y="10.875" />
+        <Point X="9.75" Y="11.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\OnlineAcount.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SrcWallet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="wallet.Program">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wallet.Wallet">
+    <Position X="7.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAgAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\Wallet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Balance" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.71" />
+  </Class>
+  <Class Name="wallet.CashWallet">
+    <Position X="4.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>lib\classes\CashWallet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.651" />
+  </Class>
+  <Class Name="wallet.History">
+    <Position X="11.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\History.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wallet.HistoryElement">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <AssociationLine Name="FromWallet" Type="wallet.Wallet" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="5.125" />
+        <Point X="7.5" Y="5.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\classes\HistoryElement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Amount" />
+      <Property Name="FromWallet" />
+      <Property Name="ToWallet" />
+    </ShowAsAssociation>
+  </Class>
   <Class Name="wallet.BankAcount">
-    <Position X="7.25" Y="6" Width="2.5" />
+    <Position X="7.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>lib\classes\BankAcount.cs</FileName>
@@ -20,85 +125,15 @@
       <Property Name="History" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="wallet.CreditAcount">
-    <Position X="9" Y="8.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>lib\classes\CreditAcount.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="wallet.Currency">
-    <Position X="5.5" Y="0.5" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>lib\classes\Currency.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="wallet.DebitAcount">
-    <Position X="2.5" Y="8.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>lib\classes\DebitAcount.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Orientation="Left" Position="0.1" />
-  </Class>
-  <Class Name="wallet.OnlineAcount">
-    <Position X="5.75" Y="8.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAAAI=</HashCode>
-      <FileName>lib\classes\OnlineAcount.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="wallet.Program">
-    <Position X="16.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="wallet.Wallet">
-    <Position X="8.75" Y="3.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAgAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>lib\classes\Wallet.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Balance" />
-    </ShowAsAssociation>
-    <Lollipop Orientation="Left" Position="0.1" />
-  </Class>
-  <Class Name="wallet.CashWallet">
-    <Position X="12.25" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>lib\classes\CashWallet.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="wallet.History">
-    <Position X="3" Y="5" Width="3" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>lib\classes\History.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="wallet.HistoryElement">
-    <Position X="14.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>lib\classes\HistoryElement.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Interface Name="wallet.IWithdraw">
-    <Position X="16.5" Y="3" Width="1.5" />
+    <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\interfaces\IWithdraw.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="wallet.IDeposit">
-    <Position X="14.75" Y="3" Width="1.5" />
+    <Position X="4.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>lib\interfaces\IDeposit.cs</FileName>
