@@ -6,6 +6,6 @@ namespace wallet
 {
     interface IDeposit
     {
-        public void Deposit(Money amount);
+        public void Deposit(Money amount, Wallet fromWallet);
     }
 }

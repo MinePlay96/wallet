@@ -17,9 +17,15 @@ namespace wallet
         {
         }
 
-        public void TransferTo(Money amount, IDeposit toWallet)
+        virtual public void TransferTo(Money amount, IDeposit toWallet)
         {
-            toWallet.Deposit(this.Withdraw(amount));
+            toWallet.Deposit(this.Withdraw(amount), this);
+        }
+
+        public void TransferTo(double amount, IDeposit toWallet)
+        {
+            Money moneyAmount = new Money(this.Balance.Currency, amount);
+            this.TransferTo(moneyAmount, toWallet);
         }
 
         public Money Withdraw(Money amount)

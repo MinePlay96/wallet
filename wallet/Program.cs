@@ -17,15 +17,20 @@ namespace wallet
             Currency euro = new Currency("euro", 1);
             Currency dollar = new Currency("dollar", 1.08);
 
-            CashWallet leons = new CashWallet(euro, 10.50);
+            DebitAcount leons = new DebitAcount(euro, 10.50);
             CashWallet simon = new CashWallet(dollar, 0);
 
-            Money toTransfer = new Money(euro, 10);
-
-            leons.TransferTo(toTransfer, simon);
+            leons.TransferTo(10, simon);
             
-            System.Diagnostics.Debug.WriteLine(leons.Balance.Amount + leons.Balance.Currency.Name);
-            System.Diagnostics.Debug.WriteLine(simon.Balance.Amount + simon.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine("Leons " + leons.Balance.Amount + leons.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine("simon " + simon.Balance.Amount + simon.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine("Leons " + "History count: " + leons.History.GetElementCount());
+
+            simon.TransferTo(5, leons);
+
+            System.Diagnostics.Debug.WriteLine("Leons " + leons.Balance.Amount + leons.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine("simon " + simon.Balance.Amount + simon.Balance.Currency.Name);
+            System.Diagnostics.Debug.WriteLine("Leons " + "History count: " + leons.History.GetElementCount());
         }
     }
 }

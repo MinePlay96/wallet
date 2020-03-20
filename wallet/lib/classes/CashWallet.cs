@@ -14,7 +14,7 @@ namespace wallet
         {
         }
 
-        public void Deposit(Money amount)
+        public void Deposit(Money amount, Wallet fromWallet)
         {
             this.Balance.Add(amount);
         }

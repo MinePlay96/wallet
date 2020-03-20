@@ -12,5 +12,10 @@ namespace wallet
         {
             HistoryElements.Add(new HistoryElement(amount, fromWallet, toWallet));
         }
+
+        public int GetElementCount()
+        {
+            return this.HistoryElements.Count;
+        }
     }
 }

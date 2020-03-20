@@ -6,7 +6,7 @@ namespace wallet
 {
     abstract class BankAcount : Wallet
     {
-        protected History History = new History();
+        public History History { get; protected set; } = new History();
 
         public BankAcount(Money balance) : base(balance)
         {
@@ -16,7 +16,7 @@ namespace wallet
         {
         }
 
-        new public void TransferTo(Money amount, IDeposit toWallet)
+        override public void TransferTo(Money amount, IDeposit toWallet)
         {
             base.TransferTo(amount, toWallet);
             this.History.AddHistoryElement(amount, this, toWallet);

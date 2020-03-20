@@ -14,9 +14,10 @@ namespace wallet
         {
         }
 
-        public void Deposit(Money amount)
+        public void Deposit(Money amount, Wallet fromWallet)
         {
-            throw new NotImplementedException();
+            this.History.AddHistoryElement(amount, fromWallet, this);
+            this.Balance.Add(amount);
         }
     }
 }
