@@ -28,7 +28,7 @@ namespace wallet
             this.TransferTo(moneyAmount, toWallet);
         }
 
-        public Money Withdraw(Money amount)
+        virtual public Money Withdraw(Money amount)
         {
             return this.Balance.Subtract(amount);
         }

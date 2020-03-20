@@ -4,7 +4,7 @@ using System.Text;
 
 namespace wallet
 {
-    class DebitAcount : OnlineAcount, IDeposit
+    class DebitAcount : BankAcount, IDeposit
     {
         public DebitAcount(Money balance) : base(balance)
         {

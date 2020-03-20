@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="wallet.Money">
-    <Position X="8.5" Y="0.5" Width="1.75" />
+    <Position X="9" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAIACAACACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\Money.cs</FileName>
@@ -11,7 +11,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="wallet.BankAcount">
-    <Position X="6.75" Y="6" Width="2.5" />
+    <Position X="7.25" Y="6" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>lib\classes\BankAcount.cs</FileName>
@@ -21,21 +21,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="wallet.CreditAcount">
-    <Position X="8.5" Y="8" Width="2.5" />
+    <Position X="9" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\CreditAcount.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wallet.Currency">
-    <Position X="5" Y="0.5" Width="2.5" />
+    <Position X="5.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAQQAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\Currency.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wallet.DebitAcount">
-    <Position X="5.25" Y="10" Width="2.5" />
+    <Position X="2.5" Y="8.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>lib\classes\DebitAcount.cs</FileName>
@@ -43,21 +43,22 @@
     <Lollipop Orientation="Left" Position="0.1" />
   </Class>
   <Class Name="wallet.OnlineAcount">
-    <Position X="5.25" Y="8" Width="2.5" />
+    <Position X="5.75" Y="8.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAAAI=</HashCode>
       <FileName>lib\classes\OnlineAcount.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="wallet.Program" Collapsed="true">
-    <Position X="16" Y="0.5" Width="1.5" />
+  <Class Name="wallet.Program">
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wallet.Wallet">
-    <Position X="8.25" Y="3.75" Width="2" />
+    <Position X="8.75" Y="3.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAgAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\Wallet.cs</FileName>
@@ -67,8 +68,8 @@
     </ShowAsAssociation>
     <Lollipop Orientation="Left" Position="0.1" />
   </Class>
-  <Class Name="wallet.CashWallet" Collapsed="true">
-    <Position X="11.75" Y="6" Width="1.5" />
+  <Class Name="wallet.CashWallet">
+    <Position X="12.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>lib\classes\CashWallet.cs</FileName>
@@ -76,28 +77,28 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="wallet.History">
-    <Position X="3" Y="3.75" Width="3" />
+    <Position X="3" Y="5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\History.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="wallet.HistoryElement" Collapsed="true">
-    <Position X="14.25" Y="0.5" Width="1.5" />
+  <Class Name="wallet.HistoryElement">
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\classes\HistoryElement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="wallet.IWithdraw" Collapsed="true">
-    <Position X="16" Y="1.75" Width="1.5" />
+  <Interface Name="wallet.IWithdraw">
+    <Position X="16.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>lib\interfaces\IWithdraw.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="wallet.IDeposit" Collapsed="true">
-    <Position X="14.25" Y="1.75" Width="1.5" />
+  <Interface Name="wallet.IDeposit">
+    <Position X="14.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>lib\interfaces\IDeposit.cs</FileName>
