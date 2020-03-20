@@ -22,6 +22,9 @@ namespace wallet
             toWallet.Deposit(this.Withdraw(amount), this);
         }
 
+        /*
+         * Just for Testing Porpuise do not USE in Application
+         */
         public void TransferTo(double amount, IDeposit toWallet)
         {
             Money moneyAmount = new Money(this.Balance.Currency, amount);
