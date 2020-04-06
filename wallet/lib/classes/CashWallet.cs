@@ -6,11 +6,11 @@ namespace wallet
 {
     class CashWallet : Wallet, IDeposit
     {
-        public CashWallet(Money balance) : base(balance)
+        public CashWallet(Money balance) : base(balance, "Bargeld")
         {
         }
 
-        public CashWallet(Currency currency, double amount) : base(currency, amount)
+        public CashWallet(Currency currency, decimal amount) : base(currency, amount, "Bargeld")
         {
         }
 

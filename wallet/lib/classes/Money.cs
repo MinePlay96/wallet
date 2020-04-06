@@ -6,10 +6,10 @@ namespace wallet
 {
     class Money
     {
-        public double Amount { get; protected set; }
+        public decimal Amount { get; protected set; }
         public Currency Currency { get; protected set; }
 
-        public Money(Currency currency, double amount)
+        public Money(Currency currency, decimal amount)
         {
             this.Amount = amount;
             this.Currency = currency;
@@ -37,13 +37,13 @@ namespace wallet
             } 
             
             // convert currency and add
-            double convertedAmount = Money.Convert(this.Currency, money.Currency, money.Amount);
+            decimal convertedAmount = Money.Convert(this.Currency, money.Currency, money.Amount);
             this.Amount -= convertedAmount;
             return new Money(this.Currency, convertedAmount);
 
         }
 
-        public static double Convert(Currency from, Currency to, double toConvertAmount)
+        public static decimal Convert(Currency from, Currency to, decimal toConvertAmount)
         {
             return to.ConvertFromEuro(from.ConvertToEuro(toConvertAmount));
         }

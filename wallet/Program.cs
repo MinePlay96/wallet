@@ -14,11 +14,16 @@ namespace wallet
         [STAThread]
         static void Main()
         {
-            Currency euro = new Currency("euro", 1);
-            Currency dollar = new Currency("dollar", 1.08);
 
-            DebitAcount leons = new DebitAcount(euro, 10.50);
-            OnlineAcount leonsPaypal = new OnlineAcount(euro, 10, leons);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new AcountView());
+            
+            Currency euro = new Currency("euro", 1);
+            Currency dollar = new Currency("dollar", 1.08m);
+
+            DebitAcount leons = new DebitAcount(euro, 10.50m, "leons");
+            OnlineAcount leonsPaypal = new OnlineAcount(euro, 10, "leons", leons);
             CashWallet simon = new CashWallet(dollar, 0);
 
             System.Diagnostics.Debug.WriteLine("Leons " + leons.Balance.Amount + leons.Balance.Currency.Name);

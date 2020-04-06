@@ -6,11 +6,11 @@ namespace wallet
 {
     class DebitAcount : BankAcount, IDeposit
     {
-        public DebitAcount(Money balance) : base(balance)
+        public DebitAcount(Money balance, String name) : base(balance, name)
         {
         }
 
-        public DebitAcount(Currency currency, double amount) : base(currency, amount)
+        public DebitAcount(Currency currency, decimal amount, String name) : base(currency, amount, name)
         {
         }
 

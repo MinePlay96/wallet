@@ -7,13 +7,15 @@ namespace wallet
     abstract class Wallet : IWithdraw
     {
         public Money Balance { get; protected set; }
+        public String Name { get; protected set; }
 
-        public Wallet(Money balance)
+        public Wallet(Money balance, String name)
         {
             this.Balance = balance;
+            this.Name = name;
         }
 
-        public Wallet(Currency currency, double amount) : this(new Money(currency, amount))
+        public Wallet(Currency currency, decimal amount, String name) : this(new Money(currency, amount), name)
         {
         }
 
@@ -25,7 +27,7 @@ namespace wallet
         /*
          * Just for Testing Porpuise do not USE in Application
          */
-        public void TransferTo(double amount, IDeposit toWallet)
+        public void TransferTo(decimal amount, IDeposit toWallet)
         {
             Money moneyAmount = new Money(this.Balance.Currency, amount);
             this.TransferTo(moneyAmount, toWallet);

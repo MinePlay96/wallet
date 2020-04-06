@@ -8,12 +8,12 @@ namespace wallet
     {
         public BankAcount SrcWallet { get; protected set; }
 
-        public OnlineAcount(Money balance, BankAcount srcWallet) : base(balance)
+        public OnlineAcount(Money balance, String name, BankAcount srcWallet) : base(balance, name)
         {
             this.SrcWallet = srcWallet;
         }
 
-        public OnlineAcount(Currency currency, double amount, BankAcount srcWallet) : base(currency, amount)
+        public OnlineAcount(Currency currency, decimal amount, String name, BankAcount srcWallet) : base(currency, amount, name)
         {
             this.SrcWallet = srcWallet;
         }

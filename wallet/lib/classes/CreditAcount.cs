@@ -6,11 +6,11 @@ namespace wallet
 {
     class CreditAcount:BankAcount
     {
-        public CreditAcount(Money balance) : base(balance)
+        public CreditAcount(Money balance, String name) : base(balance, name)
         {
         }
 
-        public CreditAcount(Currency currency, double amount) : base(currency, amount)
+        public CreditAcount(Currency currency, decimal amount, String name) : base(currency, amount, name)
         {
         }
     }

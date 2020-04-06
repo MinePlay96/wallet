@@ -6,8 +6,8 @@ namespace wallet
 {
     interface IWithdraw
     {
-        public Money Withdraw(Money amount);
+        Money Withdraw(Money amount);
 
-        public void TransferTo(Money amount, IDeposit toWallet); 
+        void TransferTo(Money amount, IDeposit toWallet); 
     }
 }

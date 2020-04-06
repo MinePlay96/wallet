@@ -8,11 +8,11 @@ namespace wallet
     {
         public History History { get; protected set; } = new History();
 
-        public BankAcount(Money balance) : base(balance)
+        public BankAcount(Money balance, String name) : base(balance, name)
         {
         }
 
-        public BankAcount(Currency currency, double amount) : base(currency, amount)
+        public BankAcount(Currency currency, decimal amount, String name) : base(currency, amount, name)
         {
         }
 

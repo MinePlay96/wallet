@@ -8,20 +8,20 @@ namespace wallet
     {
         public string Name { get; protected set; }
         // x of this equils one euro
-        protected double EuroConversionFactor { get; set; }
+        protected decimal EuroConversionFactor { get; set; }
 
-        public Currency(string name, double euroConversionFactor)
+        public Currency(string name, decimal euroConversionFactor)
         {
             this.Name = name;
             this.EuroConversionFactor = euroConversionFactor;
         }
 
-        public double ConvertToEuro(double amount)
+        public decimal ConvertToEuro(decimal amount)
         {
             return amount * this.EuroConversionFactor;
         }
 
-        public double ConvertFromEuro(double amount)
+        public decimal ConvertFromEuro(decimal amount)
         {
             return amount / this.EuroConversionFactor;
         }
