@@ -15,9 +15,9 @@ namespace wallet
         static void Main()
         {
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AcountView());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new AcountView());
             
             Currency euro = new Currency("euro", 1);
             Currency dollar = new Currency("dollar", 1.08m);

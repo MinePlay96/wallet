@@ -4,7 +4,7 @@ using System.Text;
 
 namespace wallet
 {
-    class OnlineAcount:BankAcount, IDeposit
+    class OnlineAcount:BankAcount, IDeposit, IRequiersSrc
     {
         public BankAcount SrcWallet { get; protected set; }
 
@@ -30,13 +30,19 @@ namespace wallet
         {
             Money removedMoney = this.Balance.Subtract(amount);
             // check if Online Acount is depledet / then pull money from SrcWallet
-            if (this.Balance.Amount >= 0)
-            {
-                return removedMoney;
-            }
+            this.Settle();
+            return removedMoney;
+        }
+
+        public void Settle()
+        {
+            // if Balance is positive do nothing
+            if (this.Balance.Amount >= 0) return;
+
+            // TODO: add logik to add Moneys
+            // pull money from src Wallet
             Money missingMoney = new Money(this.Balance.Currency, -this.Balance.Amount);
             this.SrcWallet.TransferTo(missingMoney, this);
-            return removedMoney;
         }
     }
 }

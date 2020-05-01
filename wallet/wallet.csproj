@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FC5DA4DB-0F19-4454-B407-9149F8F3C64A}</ProjectGuid>
@@ -78,12 +79,11 @@
     <Compile Include="lib\classes\OnlineAcount.cs" />
     <Compile Include="lib\classes\Wallet.cs" />
     <Compile Include="lib\interfaces\IDeposit.cs" />
+    <Compile Include="lib\interfaces\IRequiersSrc.cs" />
     <Compile Include="lib\interfaces\IWithdraw.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControl1.cs" />
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
