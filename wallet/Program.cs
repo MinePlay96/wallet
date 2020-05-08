@@ -14,11 +14,12 @@ namespace wallet
         [STAThread]
         static void Main()
         {
+            Application.Run(new MainForm());
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AcountView());
-            
+
             Currency euro = new Currency("euro", 1);
             Currency dollar = new Currency("dollar", 1.08m);
 
