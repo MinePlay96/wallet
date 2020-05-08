@@ -37,5 +37,10 @@ namespace wallet
         {
             return this.Balance.Subtract(amount);
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

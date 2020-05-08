@@ -4,7 +4,7 @@ using System.Text;
 
 namespace wallet
 {
-    class Currency
+    public class Currency
     {
         public string Name { get; protected set; }
         // x of this equils one euro

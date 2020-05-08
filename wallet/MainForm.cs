@@ -12,28 +12,41 @@ namespace wallet
 {
     public partial class MainForm : Form
     {
+        public static  Currency CUR_EUR = new Currency("EUR", 1.0m);
+
+        private List<User> users = new List<User>();
+        
         public MainForm()
         {
             InitializeComponent();
-            listBox1.Items.Add("Simon");
-            listBox1.Items.Add("Leon");
-            listBox2.Items.Add("Select User...");
+            User simon = new User("Simon");
+            DebitAcount simonDebit = new DebitAcount(CUR_EUR, 100.0m, "Sparkasse");
+            simon.Wallets.Add(simonDebit);
+            simon.Wallets.Add(new OnlineAcount(CUR_EUR, 0.0m, "Simons PayPal", simonDebit));
+            User leon = new User("Leon");
+            leon.Wallets.Add(new DebitAcount(CUR_EUR, 150.0m, "Ing Diba"));
+            users.Add(simon);
+            users.Add(leon);
+            foreach (User user in users)
+            {
+                listBox1.Items.Add(user);
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
-            if (listBox1.SelectedItem.ToString().Equals("Simon"))
+            User user = (User) listBox1.SelectedItem;
+            foreach (Wallet wallet in user.Wallets)
             {
-                listBox2.Items.Add("Simons Paypal");
-                listBox2.Items.Add("Simons Girokonto");
+                listBox2.Items.Add(wallet);
             }
-            else if (listBox1.SelectedItem.ToString().Equals("Leon"))
-            {
-                listBox2.Items.Add("Mein Paypal");
-                listBox2.Items.Add("Kreditkarte");
-                listBox2.Items.Add("Sparkasse Leon");
-            }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Wallet wallet = (Wallet)listBox2.SelectedItem;
+            label1.Text = "Balance: " + wallet.Balance.Amount + " " + wallet.Balance.Currency.Name;
         }
     }
 }
